@@ -1,9 +1,27 @@
 import React, { useContext } from 'react';
 import { CartContext } from './CartContext';
-import { Link } from 'react-router-dom'; // ✅ This fixes the error
+import { Link, useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const { cart, cartCount, removeFromCart, updateQuantity } = useContext(CartContext);
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    // Here you would typically:
+    // 1. Send the cart data to your backend
+    // 2. Process payment
+    // 3. Clear the cart
+    // 4. Redirect to a confirmation page
+    
+    // For now, we'll just navigate to a checkout page
+    navigate('/checkout');
+    
+    // In a real app, you might want to:
+    // 1. Create a checkout API endpoint
+    // 2. Integrate with a payment processor like Stripe
+    // 3. Handle the payment flow
+    // 4. Show order confirmation
+  };
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
@@ -25,6 +43,7 @@ const Cart = () => {
                 <button 
                   onClick={() => updateQuantity(item.id, item.size, item.quantity - 1)}
                   className="px-2 bg-gray-200 rounded"
+                  disabled={item.quantity <= 1}
                 >
                   -
                 </button>
@@ -49,7 +68,11 @@ const Cart = () => {
               Subtotal ({cartCount} items): 
               ${cart.reduce((sum, item) => sum + (item.price * item.quantity), 0).toFixed(2)}
             </p>
-            <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+            <button 
+              onClick={handleCheckout}
+              className="mt-4 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+              disabled={cartCount === 0}
+            >
               Proceed to Checkout
             </button>
           </div>
