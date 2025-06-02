@@ -10,9 +10,8 @@ const Productdetails = () => {
   const [mainImage, setMainImage] = useState(null);
   const { addToCart } = useContext(CartContext);
 
-  const product = 
-    all_product_data.all_product.find((item) => item.id === parseInt(id)) ||
-    all_product_data.all_product_2.find((item) => item.id === parseInt(id));
+  // Find the product in the combined all_products array
+  const product = all_product_data.all_products.find(item => item.id === parseInt(id));
 
   if (!product) return <div className="p-6 text-red-500">Product not found</div>;
 
@@ -35,7 +34,8 @@ const Productdetails = () => {
       price: product.new_price,
       size: selectedSize,
       image: product.images?.[0],
-      quantity: 1
+      quantity: 1,
+      category: product.category
     };
     
     addToCart(cartItem);
@@ -72,7 +72,7 @@ const Productdetails = () => {
           <span className="line-through text-gray-500">${product.old_price}</span>
         </div>
         <p className="text-gray-600">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit...
+          {product.description || 'Premium quality product with excellent craftsmanship.'}
         </p>
 
         <div className="space-y-2">
@@ -93,7 +93,7 @@ const Productdetails = () => {
         </div>
 
         <button 
-          className="mt-4 bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600"
+          className="mt-4 bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600 transition-colors duration-200"
           onClick={handleAddToCart}
         >
           Add to Cart
@@ -105,9 +105,9 @@ const Productdetails = () => {
           </p>
         )}
 
-        <div>
-          <p><strong>Category:</strong> {product.category}</p>
-          <p><strong>Tags:</strong> Modern, Latest</p>
+        <div className="pt-4 border-t border-gray-200">
+          <p><strong>Category:</strong> {product.category === 'women' ? "Women's" : "Men's"} Clothing</p>
+          <p><strong>Tags:</strong> Modern, Latest, {product.category === 'women' ? "Feminine" : "Masculine"}</p>
         </div>
       </div>
     </div>
