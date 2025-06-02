@@ -26,7 +26,10 @@ import image39 from './Assets/product_9.png';
 import image40 from './Assets/product_10.png';
 import image41 from './Assets/product_11.png';
 import image42 from './Assets/product_12.png';
-let all_product = [
+
+// Combine all products into one array with unique IDs
+let all_products = [
+  // Original all_product items (men's products)
   {
     id: 1,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
@@ -59,14 +62,6 @@ let all_product = [
     new_price: 50.0,
     old_price: 80.5,
   },
- /* {
-    id: 5,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "women",
-    images: [image2, image3, image4, image5],
-    new_price: 50.0,
-    old_price: 80.5,
-  },*/
   {
     id: 6,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
@@ -75,51 +70,11 @@ let all_product = [
     new_price: 50.0,
     old_price: 80.5,
   },
- /* {
-    id: 7,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "women",
-    images: [image10, image11, image12, image13],
-    new_price: 50.0,
-    old_price: 80.5,
-  },
-  {
-    id: 8,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "women",
-    images: [image14, image15, image1, image2],
-    new_price: 50.0,
-    old_price: 80.5,
-  },
-  {
-    id: 9,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "women",
-    images: [image3, image4, image5, image6],
-    new_price: 50.0,
-    old_price: 80.5,
-  },*/
   {
     id: 10,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     category: "men",
     images: [image7, image8, image9, image10],
-    new_price: 50.0,
-    old_price: 80.5,
-  },
-  {
-    id: 11,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "women",
-    images: [image11, image12, image13, image14],
-    new_price: 50.0,
-    old_price: 80.5,
-  },
-  {
-    id: 12,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "women",
-    images: [image15, image1, image2, image3],
     new_price: 50.0,
     old_price: 80.5,
   },
@@ -147,10 +102,10 @@ let all_product = [
     new_price: 60.0,
     old_price: 85.0,
   },
-];
-let all_product_2 = [
+  
+  // Original all_product_2 items (women's products) with adjusted IDs
   {
-    id: 1,
+    id: 101,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     category: "women",
     images: [image31, image32, image33, image34],
@@ -158,7 +113,7 @@ let all_product_2 = [
     old_price: 80.5,
   },
   {
-    id: 2,
+    id: 102,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     category: "women",
     images: [image35, image36, image37, image38],
@@ -166,7 +121,7 @@ let all_product_2 = [
     old_price: 80.5,
   },
   {
-    id: 3,
+    id: 103,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     category: "women",
     images: [image39, image40, image41, image42],
@@ -174,7 +129,7 @@ let all_product_2 = [
     old_price: 80.5,
   },
   {
-    id: 4,
+    id: 104,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     category: "women",
     images: [image35, image36, image37, image38],
@@ -182,7 +137,7 @@ let all_product_2 = [
     old_price: 80.5,
   },
   {
-    id: 5,
+    id: 105,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     category: "women",
     images: [image31, image32, image33, image34],
@@ -190,7 +145,7 @@ let all_product_2 = [
     old_price: 80.5,
   },
   {
-    id: 6,
+    id: 106,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     category: "women",
     images: [image39, image40, image41, image42],
@@ -198,7 +153,7 @@ let all_product_2 = [
     old_price: 80.5,
   },
   {
-    id: 7,
+    id: 107,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     category: "women",
     images: [image35, image36, image37, image38],
@@ -206,7 +161,7 @@ let all_product_2 = [
     old_price: 80.5,
   },
   {
-    id: 8,
+    id: 108,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     category: "women",
     images: [image39, image40, image41, image42],
@@ -214,7 +169,7 @@ let all_product_2 = [
     old_price: 80.5,
   },
   {
-    id: 9,
+    id: 109,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     category: "women",
     images: [image35, image36, image37, image38],
@@ -222,7 +177,7 @@ let all_product_2 = [
     old_price: 80.5,
   },
   {
-    id: 10,
+    id: 110,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     category: "men",
     images: [image39, image40, image41, image42],
@@ -230,7 +185,7 @@ let all_product_2 = [
     old_price: 80.5,
   },
   {
-    id: 11,
+    id: 111,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     category: "women",
     images: [image31, image32, image33, image34],
@@ -238,37 +193,30 @@ let all_product_2 = [
     old_price: 80.5,
   },
   {
-    id: 12,
+    id: 112,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     category: "women",
     images: [image39, image40, image41, image42],
     new_price: 50.0,
     old_price: 80.5,
   },
- /* {
-    id: 13,
-    name: "Men's Casual Slim Fit T-Shirt",
+  // Additional women's products from original all_product
+  {
+    id: 11,
+    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     category: "women",
-    images: [image39, image40, image41, image42],
-    new_price: 40.0,
-    old_price: 65.0,
+    images: [image11, image12, image13, image14],
+    new_price: 50.0,
+    old_price: 80.5,
   },
   {
-    id: 14,
-    name: "Men's Stylish Denim Jacket",
+    id: 12,
+    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     category: "women",
-    images: [image39, image40, image41, image42],
-    new_price: 70.0,
-    old_price: 90.0,
-  },
-  {
-    id: 15,
-    name: "Men's Classic Chino Pants",
-    category: "women",
-    images: [image39, image40, image41, image42],
-    new_price: 60.0,
-    old_price: 85.0,
-  },*/
+    images: [image15, image1, image2, image3],
+    new_price: 50.0,
+    old_price: 80.5,
+  }
 ];
 
 let data_product = [
@@ -300,35 +248,28 @@ let data_product = [
     new_price: 100.0,
     old_price: 150.0,
   },
-    {
-    id: 4,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    image: image4,
-    new_price: 100.0,
-    old_price: 150.0,
-  },
-    {
+  {
     id: 5,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     image: image5,
     new_price: 100.0,
     old_price: 150.0,
   },
-    {
+  {
     id: 6,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     image: image6,
     new_price: 100.0,
     old_price: 150.0,
   },
-    {
+  {
     id: 7,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     image: image7,
     new_price: 100.0,
     old_price: 150.0,
   },
-    {
+  {
     id: 8,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     image: image8,
@@ -337,4 +278,4 @@ let data_product = [
   },
 ];
 
-export default { all_product, data_product,all_product_2 };
+export default { all_products, data_product };
