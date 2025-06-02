@@ -5,10 +5,10 @@ import all_product_data from './data';
 const Womens = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-6">
-      {all_product_data.all_product_2
+      {all_product_data.all_products
         .filter((item) => item.category === 'women')
         .map((item) => (
-          <Link key={item.id} to={`/product/${item.id}`}>
+          <Link key={item.id} to={`/product/${item.id}`} state={{ product: item }}>
             <div className="bg-white rounded-2xl shadow-lg p-4 cursor-pointer hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
               <div className="overflow-hidden rounded-xl">
                 <img
