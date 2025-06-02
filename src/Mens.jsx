@@ -5,7 +5,7 @@ import all_product_data from './data';
 const Mens = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-6">
-      {all_product_data.all_product
+      {all_product_data.all_products
         .filter((item) => item.category === 'men')
         .map((item) => (
           <Link key={item.id} to={`/product/${item.id}`}>
